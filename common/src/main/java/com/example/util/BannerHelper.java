@@ -1,29 +1,44 @@
-package com.example.server;
+package com.example.util;
 
 import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
 
 import java.io.*;
 
-import static org.fusesource.jansi.Ansi.Color.*;
-import static org.fusesource.jansi.Ansi.ansi;
 
 /**
  * @author shiyakun
  */
 public class BannerHelper {
-    public static void banner(int color_index){
+    public static void banner(int color_index) {
         Ansi.Color color;
-        switch (color_index){
-            case 0:color=BLACK;break;
-            case 1:color=RED;break;
-            case 2:color=GREEN;break;
-            case 3:color=YELLOW;break;
-            case 4:color=BLUE;break;
-            case 5:color=MAGENTA;break;
-            case 6:color=CYAN;break;
-            case 7:color=WHITE;break;
-            default:color=DEFAULT;
+        switch (color_index) {
+            case 0:
+                color = Ansi.Color.BLACK;
+                break;
+            case 1:
+                color = Ansi.Color.RED;
+                break;
+            case 2:
+                color = Ansi.Color.GREEN;
+                break;
+            case 3:
+                color = Ansi.Color.YELLOW;
+                break;
+            case 4:
+                color = Ansi.Color.BLUE;
+                break;
+            case 5:
+                color = Ansi.Color.MAGENTA;
+                break;
+            case 6:
+                color = Ansi.Color.CYAN;
+                break;
+            case 7:
+                color = Ansi.Color.WHITE;
+                break;
+            default:
+                color = Ansi.Color.DEFAULT;
         }
         InputStreamReader inputStreamReader = null;
         AnsiConsole.systemInstall();
@@ -36,12 +51,12 @@ public class BannerHelper {
                 sb.append((char) ch);
             }
             String jsonStr = sb.toString();
-            System.out.println(ansi().fg(color).a(jsonStr).reset());
+            System.out.println(Ansi.ansi().fg(color).a(jsonStr).reset());
 
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
-            if(inputStreamReader!=null) {
+        } finally {
+            if (inputStreamReader != null) {
                 try {
                     inputStreamReader.close();
                 } catch (IOException e) {
@@ -50,9 +65,5 @@ public class BannerHelper {
             }
             AnsiConsole.systemUninstall();
         }
-    }
-
-    public static void main(String[] args) {
-        banner(0);
     }
 }
