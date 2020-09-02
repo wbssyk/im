@@ -13,7 +13,7 @@ import com.example.server.msg.ServerChannelMap;
  */
 public class ServerHandler extends MiddlewareHandler {
     public ServerHandler() {
-        super("server.properties");
+        super("server");
     }
 
     /**
