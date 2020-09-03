@@ -82,7 +82,7 @@ public abstract class MiddlewareHandler extends ChannelInboundHandlerAdapter {
 
         ctx.channel().writeAndFlush(model);
 
-        heartbeatCount++;
+        System.out.println("ping");
 
 //        System.out.println(name + " send ping msg to " + ctx.channel().remoteAddress() + "count :" + heartbeatCount);
     }
@@ -99,7 +99,7 @@ public abstract class MiddlewareHandler extends ChannelInboundHandlerAdapter {
 
         ctx.channel().writeAndFlush(model);
 
-        heartbeatCount++;
+        System.out.println("pong");
 
 //        System.out.println(name + " send pong msg to " + ctx.channel().remoteAddress() + " , count :" + heartbeatCount);
     }

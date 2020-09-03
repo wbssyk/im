@@ -30,7 +30,7 @@ public class Server {
                         protected void initChannel(Channel ch) throws Exception {
                             // TODO Auto-generated method stub
                             ChannelPipeline pipeline = ch.pipeline();
-                            pipeline.addLast(new IdleStateHandler(10, 0, 0));
+                            pipeline.addLast(new IdleStateHandler(10, 5, 5));
                             pipeline.addLast(new MsgPckDecode());
                             pipeline.addLast(new MsgPckEncode());
                             pipeline.addLast(new ServerHandler());
