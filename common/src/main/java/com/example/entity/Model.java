@@ -16,7 +16,7 @@ public class Model implements Serializable {
     /**
      * 消息类型
      */
-    private int type;
+    private Integer type;
 
     /**
      * 消息内容
@@ -26,12 +26,12 @@ public class Model implements Serializable {
     /**
      * 消息发送方
      */
-    private int toId;
+    private Integer toId;
 
     /**
      * 消息接收方
      */
-    private int fromId;
+    private Integer fromId;
 
     private Date date = new Date();
 
