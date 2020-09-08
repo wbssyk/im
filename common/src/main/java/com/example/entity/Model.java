@@ -1,5 +1,6 @@
 package com.example.entity;
 
+import org.msgpack.annotation.Index;
 import org.msgpack.annotation.Message;
 
 import java.io.Serializable;
@@ -16,22 +17,26 @@ public class Model implements Serializable {
     /**
      * 消息类型
      */
-    private Integer type;
+    @Index(0)
+    private int type;
 
     /**
      * 消息内容
      */
+    @Index(1)
     private String body;
 
     /**
      * 消息发送方
      */
-    private Integer toId;
+    @Index(2)
+    private int toId;
 
     /**
      * 消息接收方
      */
-    private Integer fromId;
+    @Index(3)
+    private int fromId;
 
     private Date date = new Date();
 

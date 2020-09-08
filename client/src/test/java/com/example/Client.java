@@ -7,6 +7,8 @@ import com.example.entity.ServerProp;
 import com.example.listener.MsgListener;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
+import java.util.Optional;
 import java.util.Scanner;
 
 /**
@@ -34,6 +36,9 @@ public class Client extends BaseAbstractClient implements MsgListener {
         //说明是开始注册
         //0:1
         //用户唯一标识
+       new ArrayList<String>().stream().map(String::length).forEach(t->{
+           System.out.println(t);
+       });
 
         Scanner sc = new Scanner(System.in);
         while (true) {
