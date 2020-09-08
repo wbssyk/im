@@ -15,28 +15,29 @@ public class Model implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 消息类型
-     */
-    @Index(0)
-    private int type;
-
-    /**
      * 消息内容
      */
-    @Index(1)
+    @Index(0)
     private String body;
+
+    /**
+     * 消息类型
+     */
+    @Index(1)
+    private Integer type;
+
 
     /**
      * 消息发送方
      */
     @Index(2)
-    private int toId;
+    private Integer toId;
 
     /**
      * 消息接收方
      */
     @Index(3)
-    private int fromId;
+    private Integer fromId;
 
     private Date date = new Date();
 
