@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.im.entity;
+option java_outer_classname = "Ack";
+import public "google/protobuf/timestamp.proto";
+
+message AckMsg {
+    required int64 toId = 1;
+
+    required int64 fromId = 2;
+
+
+    required int32 type = 3;
+
+
+    required string body = 4;
+
+
+    required google.protobuf.Timestamp date = 5;
+
+}
